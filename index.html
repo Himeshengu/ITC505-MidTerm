@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ben 10 Interactive Story</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="heading">
+        <h1>Ben 10 Interactive Story</h1>
+    </div>
+
+    <div class="story-container">
+        <div class="story-text">
+            <p id="story-text">Welcome to the Ben 10 interactive story! Click on the choices to guide the story.</p>
+        </div>
+        
+        <div class="story-image">
+            <img id="story-image" src="" alt="Story Image">
+        </div>
+
+        <div class="choices-section" id="choices-section">
+            <!-- Buttons will appear here based on choices -->
+        </div>
+
+        <button id="reset-button" class="reset-button">Restart the Game</button>
+    </div>
+
+    <footer>
+        <p>Last updated: 
+            <span id="lastModified"></span>
+        </p>
+        <section>
+            <h3>Addendum</h3>
+            <ul>
+                <li><strong>HTML:</strong> The story is structured using basic HTML elements such as <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;button&gt;</code>. These elements help organize the content into sections such as the story text, choices, and the restart button.</li>
+                <li><strong>CSS:</strong> Styling is applied through an external CSS file that defines the layout, colors, and positioning of elements. Flexbox is used to center the content, and background images are applied for visual appeal. The footer is positioned to the right side of the page using <code>position: absolute;</code>.</li>
+                <li><strong>JavaScript:</strong> The <code>script.js</code> file handles the logic of the interactive story. It listens for user inputs (button clicks) to change the story text and image dynamically. Additionally, the last modified date of the page is shown using JavaScript.</li>
+            </ul>
+        </section>
+    </footer>
+
+    <button id="scrollToTopBtn" title="Scroll to Top">Top</button>
+
+    <script type="text/javascript">
+         var x = document.lastModified;
+         document.getElementById('lastModified').textContent = x;
+
+         // Scroll to top functionality
+         const scrollToTopBtn = document.getElementById('scrollToTopBtn');
+
+         // Show the button when user scrolls down
+         window.onscroll = function() {
+             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                 scrollToTopBtn.style.display = "block"; // Show the button
+             } else {
+                 scrollToTopBtn.style.display = "none"; // Hide the button
+             }
+         };
+
+         // Scroll to top action
+         scrollToTopBtn.onclick = function() {
+             window.scrollTo({ top: 0, behavior: 'smooth' }); // Smooth scroll to top
+         };
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
